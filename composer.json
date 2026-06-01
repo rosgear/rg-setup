@@ -1,0 +1,26 @@
+{
+    "name": "rosgear/rg-setup",
+    "description": "RosGear web application installer",
+    "keywords": ["rosgear", "rg installer", "installer"],
+    "homepage": "https://rosgear.ru/",
+    "type": "component",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anton Tivonenko",
+            "email": "anton.tivonenko@gmail.com",
+            "homepage": "https://rosgear.ru/"
+        }
+    ],
+    "require": {
+        "rosgear/ge2-composer-plugin": "*"
+    },
+    "extra": {
+        "rg": {
+            "id": "rg.setup",
+            "vendor": "rg"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
