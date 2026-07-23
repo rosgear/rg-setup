@@ -16,7 +16,7 @@
         "rosgear/ge2-composer-plugin": "*"
     },
     "extra": {
-        "rg": {
+        "ge": {
             "id": "rg.setup",
             "vendor": "rg"
         }
