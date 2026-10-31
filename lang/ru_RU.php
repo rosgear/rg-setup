@@ -162,7 +162,6 @@ return [
     'Server port' => 'Порт сервера',
     'Database' => 'База данных',
     'the database is already created on the server' => 'база данных уже создана на сервере',
-    'Check connection' => 'Проверить подключение',
     'Database server connection check completed successfully' => '<b>Проверка подключения</b> к серверу базы данных выполнена успешно.',
     // NewChoice\StepDb: сообщения
     'Unable to find connection driver "%s"' => 'Невозможно найти драйвер подключения "%s"',
@@ -188,8 +187,6 @@ return [
     // NewChoice\StepDbCharset: сообщения
     'Attention! It is necessary in the previous step to select a database and make a connection' 
         => '<b>Внимание!</b> Необходимо в предыдущем шаге выбрать базу данных и сделать подключение.',
-    'Database server connection check completed successfully' 
-        => '<b>Проверка подключения</b> к серверу базы данных выполнено успешна.',
     'Database "%s" created successfully' => 'База данных <b>"%s"</b> успешно создана.',
     // NewChoice\StepDbCharset: ошибки
     'Error connecting to database server' => 'Ошибка подключения к серверу базы данных',
@@ -264,7 +261,6 @@ return [
     'The following components were found in the repository' => 'В репозитории найдены следующие компоненты',
     'Application modules' => 'Модули веб-приложения',
     'Module name' => 'Название модуля',
-    'Installed' => 'Установлен',
     'Application module extensions' => 'Расширения модулей веб-приложения',
     'Module extension name' => 'Название расширения модуля',
     'Application widgets' => 'Виджеты веб-приложения',
@@ -306,9 +302,15 @@ return [
     'Not all templates have demo data' => 'Не все шаблоны имеют демонстрационные данные',
     'Apply template demo data' => 'Применить демонстрационные данные шаблона',
     'there is demo data' => 'есть демонстрационные данные',
+    'To continue the installation, click "Next". In this case, demonstration data for missing components will not be added'
+        => 'Чтобы продолжить установку, нажмите «Далее». В этом случае демонстрационные данные для отсутствующих компонентов добавлены не будут.',
+    'If you would like to select a different template for the website or the Control Panel, click "Back"' 
+        => 'Если хотите выбрать другой шаблон для сайта или Панели управления, нажмите «Назад».',
     // NewChoice\StepDesign: ошибки
     'You need to select the website theme' => 'Вам необходимо выбрать шаблон сайта.',
     'You need to select the Control Panel theme' => 'Вам необходимо выбрать шаблон Панели управления.',
+    'The template contains demonstration data for components that are missing from the current web application build' => 
+        'Шаблон содержит демонстрационные данные компонентов (модулей и расширений), отсутствующих в текущей сборке веб‑приложения.<br><br>Список идентификаторов отсутствующих компонентов:<br><br><ul>%s</ul>',
 
     // NewChoice\StepInfo: макет страницы
     'Information' => 'Информация',
