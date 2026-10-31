@@ -8,3 +8,6 @@
 # Игнорировать шаблоны файлов установки (для редакций веб-приложений они свои)
 /queries/tables.php    export-ignore
 /queries/variables.php export-ignore
+
+# Установить поведение по умолчанию на случай, если у пользователей не задан параметр core.autocrlf
+* text=auto
