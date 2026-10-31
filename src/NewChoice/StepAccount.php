@@ -170,7 +170,7 @@ class StepAccount extends SetupStep
      */
     public function getTitle(): string
     {
-        return $this->t('Web application files checkout');
+        return $this->t('Create a user account');
     }
 
     /**

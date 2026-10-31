@@ -222,7 +222,7 @@ class StepAssembly extends SetupStep
      */
     public function getTitle(): string
     {
-        return $this->t('Web application files checkout');
+        return $this->t('Building a web application edition');
     }
 
     /**

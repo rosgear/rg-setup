@@ -56,7 +56,7 @@ class StepFinish extends SetupStep
      */
     public function getTitle(): string
     {
-        return $this->t('Web application files checkout');
+        return $this->t('Completing the installation');
     }
 
     /**

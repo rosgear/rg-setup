@@ -31,6 +31,15 @@ class StepDesign extends SetupStep
      */
     public string $viewName = 'new/design';
 
+    /**
+     * Компоненты демонстрационные данных которых не добавляются, т.к. компоненты 
+     * отсутсвуют в веб-приложении.
+     * 
+     * @see StepDesign::applyThemeDemo()
+     * 
+     * @var array
+     */
+    public array $unprocessedComponents = [];
 
     /**
      * {@inheritdoc}
@@ -123,7 +132,7 @@ class StepDesign extends SetupStep
     /**
      * Наполнить демонстрационными данными.
      * 
-     * @return void
+     * @return bool
      */
     protected function applyThemeDemo(): bool
     {
@@ -138,13 +147,13 @@ class StepDesign extends SetupStep
             $this->addError('Unable to determine theme "' . $this->state->feTheme . '" parameters');
             return false;
         }
+
         // т.к. возможно тема еще не установлена, то добавляем найденную тему
         // в доступные (иначе методы $theme не будет работать)
         $theme->addAvailable($this->state->feTheme, $themeParams);
         // если есть демоданные для сайта
         if ($theme->hasPreview($this->state->feTheme)) {
             $packageFile = $theme->getPreviewFilename($this->state->feTheme);
-
             try {
                 $import = new \Ge\Import\Import();
                 $import->runPackage($packageFile);
@@ -172,6 +181,9 @@ class StepDesign extends SetupStep
                 $this->addError($e->getMessage());
                 return false;
             }
+
+            // компоненты демоданные которых не были обработаны
+            $this->unprocessedComponents = $import->getUnprocessedComponents();
         }
 
         /** @var null|\Ge\Theme\Theme $theme */
@@ -232,7 +244,7 @@ class StepDesign extends SetupStep
      */
     public function getTitle(): string
     {
-        return $this->t('Choosing a Web Application design');
+        return $this->t('Web application design');
     }
 
     /**
@@ -284,7 +296,17 @@ class StepDesign extends SetupStep
     }
 
     /**
-     *  Выполняет действие "Design" (устанавливает темы).
+     * Проверяет, есть ли компоненты которых нет в сборке веб-приложения.
+     * 
+     * @return bool
+     */
+    public function hasUnprocessedComponents(): bool
+    {
+        return sizeof($this->unprocessedComponents) > 0;
+    }
+
+    /**
+     * Выполняет действие "Design" (устанавливает темы).
      * 
      * @return void
      */
@@ -309,7 +331,21 @@ class StepDesign extends SetupStep
                 $this->complete();
                 // обновить изменения сделанные шагом
                 if ($this->updateState()) {
-                    header('Location: ' . $this->installer->makeUrl('new:info'));
+                    // если есть демоданные отсутствующих компонентов
+                    if ($this->unprocessedComponents) {
+                        $id = '';
+                        foreach ($this->unprocessedComponents as $component) {
+                            $id .= '<li><b>' . $component['id'] . '</b></li>';
+                        }
+                        $this->addWarning(
+                            $this->t(
+                                'The template contains demonstration data for components that are missing from the current web application build',
+                                [$id]
+                            )
+                        );
+                    } else {
+                        header('Location: ' . $this->installer->makeUrl('new:info'));
+                    }
                 }
             }
         }

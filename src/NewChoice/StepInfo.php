@@ -100,7 +100,7 @@ class StepInfo extends SetupStep
      */
     public function getTitle(): string
     {
-        return $this->t('Web application files checkout');
+        return $this->t('Web application information');
     }
 
     /**

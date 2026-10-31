@@ -200,7 +200,7 @@ class StepDbCharset extends SetupStep
      */
     public function getTitle(): string
     {
-        return $this->t('Database connection');
+        return $this->t('Selecting the connection encoding');
     }
 
     /**
