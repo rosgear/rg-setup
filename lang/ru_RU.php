@@ -43,11 +43,10 @@ return [
     'Web application installer' => 'Установщик веб-приложения',
     'install' => 'установить',
     'To install the web application follow the link %s' => 'Для установки веб-приложения перейдите по ссылке %s',
-    'If you don\'t need an installer or the web application is already installed then remove the directory "%s"' 
-        => 'Если вы не нуждаетесь в установщике или веб-приложение уже установлено, тогда удалите каталог "%s"',
+    'If you don\'t need an installer or the web application is already installed then remove the directory "%s"' => 'Если вы не нуждаетесь в установщике или веб-приложение уже установлено, тогда удалите каталог "%s"',
 
     // CommonChoice\StepWelcome: макет страницы
-    'Welcome to the RosGear installation' => 'Добро пожаловать в установку RosGear',
+    'Welcome to the RosGear installation' => 'Добро пожаловать в установку РосГир',
     'You will be guided through the entire installation process' => 'Вы пройдёте через весь процесс установки',
     'Please click the «Next» button to continue' => 'Пожалуйста, нажмите кнопку «Далее» для продолжения',
     'Choose language' => 'Выберите язык',
@@ -168,7 +167,7 @@ return [
 
     // NewChoice\StepDbCharset: макет страницы
     'Charset selection' => 'Выбор кодировки',
-    'Selecting the connection encoding' => 'Выбор кодировки подключения к северу базы данных',
+    'Selecting the connection encoding' => 'Выбор кодировки подключения к серверу базы данных',
     'Specify the encoding and collation for a correct connection to the database server' 
         => 'Укажите кодировку и сопоставление для корректного подключения к серверу базы данных',
     'use default UTF8 encoding' => 'использовать по умолчанию кодировку UTF8',
@@ -314,7 +313,7 @@ return [
 
     // NewChoice\StepInfo: макет страницы
     'Information' => 'Информация',
-    'Web application information' => 'Информация о веб-приложение',
+    'Web application information' => 'Информация о веб-приложении',
     'At this installation step, you must specify the name and description used in the templates and on the pages of your web application' 
         => 'На этом шаге установки необходимо указать название и описание, применяемые в шаблонах и на страницах вашего веб-приложения',
     'After installation, you can change or specify new values for each language' 
@@ -382,7 +381,7 @@ return [
         => 'Невозможно выполнить удаление каталога <b>"%s"</b> для остановки установщика. Выполните это вручную.',
 
     // NewChoice\StepFinish
-    'Database configuration file updated successfully' => 'Файл конфигурации базы данных успешно обнавлён',
+    'Database configuration file updated successfully' => 'Файл конфигурации базы данных успешно обновлён',
 
     // Repair\StepAssembly: макет страницы
     'Updating' => 'Обновление',
